@@ -2,9 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const PORT = 1234;
-const fs = require('fs');
+
 const exphbs = require('express-handlebars');
-// const houses = require('./points.json');
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
