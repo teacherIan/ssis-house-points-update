@@ -30,12 +30,18 @@
 <h3>Current Points:</h3>
 <ul class="list-group">
     {{#each houses}}
-    <li class="list-group-item">{{this.house}} : {{this.points}}</li>
+    <li class="list-group-item">{{this.house}}   :   {{this.points}}</li>
+    {{/each}}
+</ul>
+<h3>Win Message:</h3>
+<ul class="list-group">
+    {{#each houses}}
+    <li class="list-group-item">{{this.house}}   :   {{this.message}}</li>
     {{/each}}
 </ul>
 
 <form action="/add" method="POST" class="mb-4">
-    <h3 class="">Update Points:</h3>
+    <h3 class="">Update House:</h3>
 <div class="form-floating">
   <select class="form-select" id="floatingSelect" name="house">
     <option selected value="Sapphire">Sapphire</option>
@@ -46,9 +52,13 @@
   <label for="floatingSelect">Select House:</label>
 </div>
 
-<div class="form-floating mt-4">
+<div class="form-floating mt-2">
   <input type='number' class="form-control" id="floatingInput" placeholder="0" name="amount">
-  <label for="floatingInput">+/- Amount:</label>
+  <label for="floatingInput">+/- To Current Amount:</label>
+</div>
+<div class="form-floating mt-2">
+  <input type='text' class="form-control" id="floatingInput" placeholder="" name="message">
+  <label for="floatingInput">Win Message:</label>
 </div>
   <div class="mt-4 d-grid gap-2">
     <button type="submit" class="btn btn-primary">Submit</button>

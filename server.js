@@ -18,21 +18,25 @@ let houses = [
     id: 1,
     house: 'Sapphire',
     points: 100,
+    message: 'Sapphire Wins',
   },
   {
     id: 2,
     house: 'Ruby',
     points: 200,
+    message: 'Ruby Wins',
   },
   {
     id: 3,
     house: 'Amber',
     points: 300,
+    message: 'Amber Wins',
   },
   {
     id: 4,
     house: 'Perl',
     points: 400,
+    message: 'Perl Wins',
   },
 ];
 
@@ -54,6 +58,9 @@ app.post('/add', (req, res) => {
   houses.forEach((house) => {
     if (req.body.house == house.house) {
       house.points += +req.body.amount;
+      if (req.body.message != '') {
+        house.message = req.body.message;
+      }
     }
   });
 
