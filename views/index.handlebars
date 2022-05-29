@@ -1,0 +1,61 @@
+
+<style>
+  .background-image {
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100vw;
+    
+  }
+
+  .form-floating {
+    opacity: .7;
+  }
+  .list-group {
+    opacity: .7;
+  }
+
+  .ssis-image {
+    width: 100%;
+    opacity: .05;
+  }
+
+  .btn {
+    z-index: 1;
+  }
+</style>
+
+    <div class="background-image">
+        <img src="/public/SSIS__logo.png" class="ssis-image">
+    </div>
+
+
+<h1 class="text-center mb-3">House Points System</h1>
+<h3>Current Points:</h3>
+<ul class="list-group">
+    {{#each houses}}
+    <li class="list-group-item">{{this.house}} : {{this.points}}</li>
+    {{/each}}
+</ul>
+
+<form action="/add" method="POST" class="mb-4">
+    <h3 class="">Update Points:</h3>
+<div class="form-floating">
+  <select class="form-select" id="floatingSelect" name="house">
+    <option selected value="Sapphire">Sapphire</option>
+    <option value="Ruby">Ruby</option>
+    <option value="Amber">Amber</option>
+    <option value="Perl">Perl</option>
+  </select>
+  <label for="floatingSelect">Select House:</label>
+</div>
+
+<div class="form-floating mt-4">
+  <input type='number' class="form-control" id="floatingInput" placeholder="0" name="amount">
+  <label for="floatingInput">+/- Amount:</label>
+</div>
+  <div class="mt-4 d-grid gap-2">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+
+</form>
