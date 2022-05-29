@@ -6,6 +6,11 @@ const fs = require('fs');
 const exphbs = require('express-handlebars');
 // const houses = require('./points.json');
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 let houses = [
