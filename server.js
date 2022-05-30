@@ -33,9 +33,9 @@ let houses = [
   },
   {
     id: 4,
-    house: 'Perl',
+    house: 'Pearl',
     points: 400,
-    message: 'Perl Wins',
+    message: 'Pearl Wins',
   },
 ];
 
